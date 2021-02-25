@@ -1,0 +1,21 @@
+<template>
+<lightning-card>
+    <div style="font-size: medium;">
+        <lightning-icon icon-name="standard:account" alternative-text="Account" title="Account"></lightning-icon> <b> Projects </b>  </br>
+        <div style=" float: right;">
+        <lightning-button-icon icon-name="utility:settings"  alternative-text="Settings" title="Settings"></lightning-button-icon>
+        <lightning-button-icon icon-name="utility:filterList"  alternative-text="filterList" title="filterList"></lightning-button-icon>
+        <lightning-button-icon icon-name="utility:refresh"  alternative-text="refresh" title="refresh"></lightning-button-icon>
+        <lightning-button  label={buttonLabel} icon-name="utility:delete"  alternative-text="delete" title="delete" onclick={deleteprojects} disabled={isTrue}></lightning-button>
+    </div>
+    </div></br></br>
+    <div>
+        <lightning-datatable
+                key-field="id"
+                data={List}
+                columns={columns}
+                onrowselection={getSelectedRecords}>
+        </lightning-datatable>
+    </div>    
+</lightning-card>
+</template>
